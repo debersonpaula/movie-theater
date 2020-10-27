@@ -1,50 +1,39 @@
-# Getting Started with Create React App
+# Movie Theater
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Installing dependencies
+```sh
+npm install
+```
 
-## Available Scripts
+Run the application
+```sh
+npm start
+```
 
-In the project directory, you can run:
+# Main Tech used
 
-### `npm start`
+- Create React App
+- Axios, for http communications
+- Material-UI (fastest reusable components)
+- Typescript (I love strongly typed frameworks)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# My own frameworks
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Reactoom
+    - NPM : https://www.npmjs.com/package/reactoom
+    - Repo : https://github.com/debersonpaula/reactoom
+    - State management framework, in alpha tests, based in my another state framework ExRedux (https://www.npmjs.com/package/exredux)
 
-### `npm test`
+# Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Based on MVVM and structure to be Domain Driven, when the model acts as domain for business logics.
+- The BaseHttpModel file is based on ExRedux custom plugin (https://github.com/debersonpaula/exredux/blob/master/src/custom/BaseHttpModel.ts), that helps to architect http calls and transform it in a domain class.
 
-### `npm run build`
+# API Test
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you have any problems with the API call, you can use the original "https://api.themoviedb.org/3" in the config.ts file, in the "src" folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I made the calls with the proxy due to CORS issue with the original URL.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-
-const API_URL = 'https://api.themoviedb.org/3/';
-const API_KEY = '844dba0bfd8f3a4f3799f6130ef9e335';
+If you have CORS issue, try to use chrome without security locks, changins the Chrome shortcut to:
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir="C:\Temp\Chrome"
